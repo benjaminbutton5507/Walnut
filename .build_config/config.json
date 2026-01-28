@@ -1,0 +1,17 @@
+{
+    "builds": [
+        {
+            "label": "release_x64",
+            "walnut_version": "0.1.0",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "WarningsAsErrors": true,
+            "cxx_standard": "c++17",
+            "architecture": "x64",
+            "mode": "release",
+            "input_files": [
+                "src/main.cpp"
+            ],
+            "output_file": "build/release_x64_main.exe"
+        }
+    ]
+}

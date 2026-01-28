@@ -2,6 +2,6 @@
 
 
 int main() {
-    std::cout << "Hello, Walnut Build System!" << std::endl;
+    std::cout << "Hello, Walnut!" << std::endl;
     return 0;
 }
