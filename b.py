@@ -20,7 +20,6 @@ class BuildConfig:
             config_data = json.load(f)
 
         self.label: str | None = None
-        self.walnut_version: str | None = None
         self.command: str | None = None
         self.warnings_as_errors: bool | None = None
         self.cxx_standard: str | None = None
@@ -32,16 +31,15 @@ class BuildConfig:
         for build in config_data["builds"]:
             if build["label"] == config_name:
                 self.label = build["label"]
-                self.walnut_version = build["walnut_version"]
                 self.command = build["command"]
                 self.warnings_as_errors = build["WarningsAsErrors"]
                 self.cxx_standard = build["cxx_standard"]
                 self.architecture = build["architecture"]
                 self.mode = build["mode"]
-                self.output_file = f"v{self.walnut_version}/{build["output_file"]}"
+                self.output_file = f"Walnut/{build["output_file"]}"
 
                 for file in build["input_files"]:
-                    self.input_files.append(f"v{self.walnut_version}/{file}")
+                    self.input_files.append(f"Walnut/{file}")
 
                 break
 
@@ -51,7 +49,6 @@ class BuildConfig:
 
     def Info(self):
         print(f"Build Configuration: {self.label}")
-        print(f"Walnut Version: {self.walnut_version}")
         print(f"Command: {self.command}")
         print(f"Warnings as Errors: {self.warnings_as_errors}")
         print(f"C++ Standard: {self.cxx_standard}")
